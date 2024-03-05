@@ -1,10 +1,10 @@
 
 interface ButtonProps {
     buttonText: string;
-    display: string;
-    checkHandler
+    currentDisplay: string;
+    setTheDisplay: (setThis: string) => void;
 }
-const Button = ({ buttonText, onButtonClick, display}: ButtonProps) => {
+const Button = ({ buttonText, currentDisplay, setTheDisplay}: ButtonProps) => {
 
     let style = {
         width: "100px",
@@ -16,7 +16,7 @@ const Button = ({ buttonText, onButtonClick, display}: ButtonProps) => {
     return (
         <div>
             <button className="button" style={style} onClick={() =>
-                set
+                setTheDisplay(currentDisplay + `${ buttonText }`)
             }
             >{ buttonText }</button>
         </div>

@@ -1,14 +1,14 @@
 import {useState} from "react";
 
 interface DisplayProps {
-    userInput: string;
+    displayThis: string;
 }
 
-const Display = ({ userInput }: DisplayProps) => {
+const Display = ({ displayThis }: DisplayProps) => {
 
     return (
       <>
-          <label style={{fontSize:"90px", width:"400px", marginLeft:"15px"}}>{userInput}</label>
+          <label style={{fontSize:"90px", width:"400px", marginLeft:"15px"}}>{displayThis}</label>
       </>
     );
 }
