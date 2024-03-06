@@ -58,12 +58,12 @@ function App() {
                     <Display displayThis={display}/>
                 </div>
                 <div className="row">
-					{/*<NewButton buttonText="1" currentDisplay={display} setTheDisplay={setDisplay} />*/}
-                    <Button buttonText='1' setTheDisplay={setDisplay} currentDisplay={display}/>
-                    <Button buttonText='2' setTheDisplay={setDisplay} currentDisplay={display}/>
-                    <Button buttonText='3' setTheDisplay={setDisplay} currentDisplay={display}/>
+					<NewButton buttonText="1" currentDisplay={display} setTheDisplay={setDisplay} />
+                    {/*<Button buttonText='1' setTheDisplay={setDisplay} currentDisplay={display}/>*/}
+                    <NewButton buttonText='2' setTheDisplay={setDisplay} currentDisplay={display}/>
+                    <NewButton buttonText='3' setTheDisplay={setDisplay} currentDisplay={display}/>
 					{/*<NewButton buttonText="X" currentDisplay={display} setTheFirstNumber={setFirstNumber} setTheOperator={setOperator} setTheDisplay={setDisplay} />*/}
-                    <OperatorButtons
+                    <NewButton
                         buttonText={"X"}
                         currentDisplay={display}
                         setTheFirstNumber={setFirstNumber}
@@ -71,10 +71,10 @@ function App() {
                         setTheDisplay={setDisplay}/>
                 </div>
                 <div className="row">
-                    <Button buttonText='4' setTheDisplay={setDisplay} currentDisplay={display}/>
-                    <Button buttonText='5' setTheDisplay={setDisplay} currentDisplay={display}/>
-                    <Button buttonText='6' setTheDisplay={setDisplay} currentDisplay={display}/>
-                    <OperatorButtons
+                    <NewButton buttonText='4' setTheDisplay={setDisplay} currentDisplay={display}/>
+                    <NewButton buttonText='5' setTheDisplay={setDisplay} currentDisplay={display}/>
+                    <NewButton buttonText='6' setTheDisplay={setDisplay} currentDisplay={display}/>
+                    <NewButton
                         buttonText={"/"}
                         currentDisplay={display}
                         setTheFirstNumber={setFirstNumber}
@@ -83,10 +83,10 @@ function App() {
                     />
                 </div>
                 <div className="row">
-                    <Button buttonText='7' setTheDisplay={setDisplay} currentDisplay={display}/>
-                    <Button buttonText='8' setTheDisplay={setDisplay} currentDisplay={display}/>
-                    <Button buttonText='9' setTheDisplay={setDisplay} currentDisplay={display}/>
-                    <OperatorButtons
+                    <NewButton buttonText='7' setTheDisplay={setDisplay} currentDisplay={display}/>
+                    <NewButton buttonText='8' setTheDisplay={setDisplay} currentDisplay={display}/>
+                    <NewButton buttonText='9' setTheDisplay={setDisplay} currentDisplay={display}/>
+                    <NewButton
                         buttonText={"-"}
                         currentDisplay={display}
                         setTheFirstNumber={setFirstNumber}
@@ -95,13 +95,13 @@ function App() {
                     />
                 </div>
                 <div className="row">
-                    <Button buttonText='.' setTheDisplay={setDisplay} currentDisplay={display}/>
-                    <Button buttonText='0' setTheDisplay={setDisplay} currentDisplay={display}/>
-                    <EqualButton
+                    <NewButton buttonText='.' setTheDisplay={setDisplay} currentDisplay={display}/>
+                    <NewButton buttonText='0' setTheDisplay={setDisplay} currentDisplay={display}/>
+                    <NewButton
                         buttonText={"="}
                         currentDisplay={display}
                         setTheSecondNumber={setSecondNumber}/>
-                    <OperatorButtons
+                    <NewButton
                         buttonText={"+"}
                         currentDisplay={display}
                         setTheFirstNumber={setFirstNumber}
