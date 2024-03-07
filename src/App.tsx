@@ -109,6 +109,16 @@ function App() {
                         setTheDisplay={setDisplay}
                     />
 			    </div>
+				<div className="row">
+					<NewButton
+						buttonText="clear"
+						setTheDisplay={setDisplay}
+						setTheFirstNumber={setFirstNumber}
+						setTheSecondNumber={setSecondNumber}
+						setTheOperator={setOperator}
+						currentDisplay={display} />
+					<NewButton buttonText="<-" setTheDisplay={setDisplay} currentDisplay={display}/>
+				</div>
 		    </div>
 		</div>
 	);
