@@ -1,5 +1,5 @@
 interface NewButtonsProps {
-	buttonText : string;
+	buttonText: string;
 	currentDisplay: string;
 	setTheDisplay?: (setThis: string) => void;
 	setTheFirstNumber?: (setThis: string) => void;
@@ -7,34 +7,18 @@ interface NewButtonsProps {
 	setTheOperator?: (setThis: string) => void;
 }
 
-const backSpace = (currentDisplay : string) => {
-
-	let arrayLength : number = currentDisplay.length
-	console.log(`arraylength: ${arrayLength}`)
-	let charArray : string[] = currentDisplay.split('');
-
-
-	console.log(`charArray is: ${charArray}`)
-
-	charArray.splice(arrayLength-1, 1);
-
-	// console.log(`newString ${charArray.toString()}`)
-
-	let newString : string = "";
-	for (let i = 0; i < charArray.length-2; i++){
-		newString += charArray[i];
-		console.log(newString);
-	}
-
-	return  newString;
-
-}
-
-const NewButton = ({buttonText, currentDisplay, setTheDisplay, setTheFirstNumber, setTheSecondNumber, setTheOperator}: NewButtonsProps)  => {
+const NewButton = ({
+					   buttonText,
+					   currentDisplay,
+					   setTheDisplay,
+					   setTheFirstNumber,
+					   setTheSecondNumber,
+					   setTheOperator
+				   }: NewButtonsProps) => {
 	let styleNormalButton = {
 		width: "100px",
-		height:"100px",
-		marginRight:"3px"
+		height: "100px",
+		marginRight: "3px"
 
 	}
 
@@ -44,7 +28,7 @@ const NewButton = ({buttonText, currentDisplay, setTheDisplay, setTheFirstNumber
 		marginRight: "3px"
 	}
 
-	if(buttonText !== "<-" && setTheFirstNumber === undefined && setTheSecondNumber === undefined && setTheDisplay !== undefined && setTheOperator === undefined) {
+	if (buttonText !== "<-" && setTheFirstNumber === undefined && setTheSecondNumber === undefined && setTheDisplay !== undefined && setTheOperator === undefined) {
 		return (
 			<div>
 				<button className="button" style={styleNormalButton} onClick={() =>
@@ -55,33 +39,33 @@ const NewButton = ({buttonText, currentDisplay, setTheDisplay, setTheFirstNumber
 		);
 	} else if (setTheFirstNumber !== undefined && setTheSecondNumber === undefined && setTheDisplay !== undefined && setTheOperator !== undefined) {
 		return (
-			<button style={styleNormalButton} onClick={() => {
+			<button className="button" style={ styleNormalButton } onClick={() => {
 				setTheFirstNumber(currentDisplay);
 				setTheOperator(buttonText);
 				setTheDisplay("");
-			}}>{buttonText}</button>
+			}}>{ buttonText }</button>
 		);
-	}else if(setTheFirstNumber === undefined && setTheSecondNumber !== undefined && setTheOperator === undefined && setTheDisplay === undefined){
+	} else if (setTheFirstNumber === undefined && setTheSecondNumber !== undefined && setTheOperator === undefined && setTheDisplay === undefined) {
 		return (
-			<button style={styleNormalButton} onClick={() => {
+			<button className="button" style={styleNormalButton} onClick={() => {
 				setTheSecondNumber(currentDisplay)
 			}}>{buttonText}</button>
 		)
-	} else if(buttonText === "clear" && setTheDisplay !== undefined && setTheFirstNumber !== undefined && setTheSecondNumber !== undefined && setTheOperator !== undefined) {
+	} else if (buttonText === "clear" && setTheDisplay !== undefined && setTheFirstNumber !== undefined && setTheSecondNumber !== undefined && setTheOperator !== undefined) {
 		return (
-			<button style={styleLongButton} onClick={() => {
+			<button className="button" style={styleLongButton} onClick={() => {
 				setTheDisplay("");
 				setTheFirstNumber("");
 				setTheSecondNumber("");
 			}}>{buttonText}</button>
 		);
-	}else if(buttonText === "<-" && setTheDisplay !== undefined && setTheSecondNumber === undefined && setTheFirstNumber === undefined && setTheOperator === undefined){
+	} else if (buttonText === "<-" && setTheDisplay !== undefined && setTheSecondNumber === undefined && setTheFirstNumber === undefined && setTheOperator === undefined) {
 		return (
-			<button style={styleLongButton} onClick={() => {
-				setTheDisplay(backSpace(currentDisplay));
+			<button className="button" style={styleLongButton} onClick={() => {
+				setTheDisplay(currentDisplay.substring(0, currentDisplay.length - 1));
 			}}>{buttonText}</button>
 		);
-	} else{
+	} else {
 		return (
 			<></>
 		);

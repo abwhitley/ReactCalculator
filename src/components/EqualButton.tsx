@@ -12,7 +12,7 @@ const EqualButton = ({buttonText,currentDisplay, setTheSecondNumber} : EqualButt
     }
 
     return (
-        <button style={style} onClick={() => {
+        <button className="button" style={style} onClick={() => {
             setTheSecondNumber(currentDisplay)
         }}>{buttonText}</button>
     )

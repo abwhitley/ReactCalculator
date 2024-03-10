@@ -59,10 +59,8 @@ function App() {
                 </div>
                 <div className="row">
 					<NewButton buttonText="1" currentDisplay={display} setTheDisplay={setDisplay} />
-                    {/*<Button buttonText='1' setTheDisplay={setDisplay} currentDisplay={display}/>*/}
                     <NewButton buttonText='2' setTheDisplay={setDisplay} currentDisplay={display}/>
                     <NewButton buttonText='3' setTheDisplay={setDisplay} currentDisplay={display}/>
-					{/*<NewButton buttonText="X" currentDisplay={display} setTheFirstNumber={setFirstNumber} setTheOperator={setOperator} setTheDisplay={setDisplay} />*/}
                     <NewButton
                         buttonText={"X"}
                         currentDisplay={display}
